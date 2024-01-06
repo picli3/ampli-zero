@@ -1,0 +1,16 @@
+*backups
+*.lck
+*.step
+*.STEP
+*.STP
+*.FCStd
+fp-info-cache
+*.csv
+*.xml
+*.tmp
+*.zip
+doc/v*
+doc/V*
+*.FCStd1
+*.pdf
+doc/gerber/*

@@ -452,8 +452,8 @@
       "version": 3
     },
     "net_colors": {
-      "+32": "rgb(255, 0, 0)",
-      "-32": "rgb(0, 0, 255)"
+      "+107": "rgb(255, 0, 0)",
+      "-107": "rgb(0, 0, 255)"
     },
     "netclass_assignments": null,
     "netclass_patterns": [
@@ -472,7 +472,7 @@
       "step": "ampli-zero.step",
       "vrml": ""
     },
-    "page_layout_descr_file": ""
+    "page_layout_descr_file": "/home/maykol/repos/maykolrey.com.kicad_wks"
   },
   "schematic": {
     "annotate_start_num": 0,

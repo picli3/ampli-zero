@@ -1,0 +1,78 @@
+.title KiCad schematic
+.include "/home/maykol/Documentos/spice/2SA1943.lib"
+.include "/home/maykol/Documentos/spice/2SC5200.mod"
+.include "/home/maykol/Documentos/spice/2n5401.lib"
+.include "/home/maykol/Documentos/spice/2n5551.lib"
+.include "/home/maykol/Documentos/spice/transistores_2.lib"
+.save all
+.probe alli
+
+**comienzo de las pruebas
+*.op
+.tran 10u 0.3m 0
+.measure tran Vo_RMS RMS v(/voq103) from=0 to=0.2m
+.measure tran Io_RMS RMS i(R112) from=0 to=0.2m
+.control
+fourier 1k v(/voq103)
+gnuplot Vo v(/voq103) v(/v4i)
++ xycontour
++ title 'Voltaje de salida Vs Voltaje de entrada'
++ xlabel 'Tiempo (S)'
++ ylabel 'Voltaje (V)'
+.endc
+
+**Fin de las pruebas
+
+R111 Net-_L102-Pad1_ Net-_C103-Pad2_ 15
+C103 GND Net-_C103-Pad2_ 240u
+R110 Net-_C103-Pad2_ GND 15
+R112 /voq103 Net-_L102-Pad1_ 6.4
+XQ107 -50V Net-_Q101-B_ Net-_Q107-E_ 2SA1943
+R108 Net-_Q106-E_ /voq103 0.33
+R109 /voq103 Net-_Q107-E_ 0.33
+L101 Net-_C103-Pad2_ GND 43m
+L102 Net-_L102-Pad1_ Net-_C103-Pad2_ 1m
+R21 Net-_Q9-E_ -50V 22
+R23 Net-_Q8-B_ /voq103 18k
+R19 Net-_Q8-B_ Net-_C7-Pad1_ 220
+R20 Net-_C6-Pad1_ Net-_Q8-B_ 1k
+C6 Net-_C6-Pad1_ GND 220u
+Q9 /vdb Net-_Q4-C_ Net-_Q9-E_ 2N5551
+C5 Net-_Q4-C_ /vdb 300p
+C7 Net-_C7-Pad1_ /voq103 100p
+Q10 +50V Net-_Q10-B_ Net-_Q10-E_ 2SC5200
+R105 Net-_Q10-E_ /voq103 0.33
+Q106 +50V Net-_Q10-B_ Net-_Q106-E_ 2SC5200
+Q102 /vdt /VB2 Net-_Q102-E_ 2N5401
+R101 +50V Net-_Q102-E_ 100
+R12 /gndv GND 12k
+C3 +50V /gndv 10u
+Q3 /VB2 Net-_Q3-B_ +50V 2N5401
+R13 /VB2 /gndv 10k
+R14 /VE2 Net-_Q3-B_ 1k
+R103 /voq103 Net-_Q101-B_ 33
+Q104 -50V /vdb Net-_Q101-B_ 2SB649
+R106 /voq103 Net-_Q101-E_ 0.33
+XQ101 -50V Net-_Q101-B_ Net-_Q101-E_ 2SA1943
+Q103 +50V /vdt Net-_Q10-B_ 2SD669
+Q112 /vdt Net-_Q112-B_ /vdb 2N5551
+R115 /vdt Net-_Q112-B_ 1.2k
+R116 Net-_Q112-B_ /vdb 330
+R104 Net-_Q10-B_ /voq103 33
+C102 Net-_Q7-B_ /v4i 3.3u
+V1 +50V GND DC 50 
+Q7 Net-_Q4-C_ Net-_Q7-B_ Net-_Q7-E_ 2N5401
+R18 /VC2 Net-_Q7-E_ 100
+R11 /VC2 Net-_Q8-E_ 100
+Q8 Net-_Q4-B_ Net-_Q8-B_ Net-_Q8-E_ 2N5401
+V4 /v4i GND DC 0 SIN( 0 1 5k 0 0 0 2 ) AC 2 
+V2 GND -50V DC 50 
+Q2 /VC2 /VB2 /VE2 2N5401
+R9 +50V /VE2 150
+Q4 Net-_Q4-C_ Net-_Q4-B_ Net-_Q4-E_ 2N5551
+R15 Net-_Q5-E_ -50V 68
+Q5 Net-_Q4-B_ Net-_Q4-B_ Net-_Q5-E_ 2N5551
+R22 Net-_Q7-B_ GND 10k
+R10 Net-_Q4-E_ -50V 68
+C8 -50V GND 100n
+.end
