@@ -90,7 +90,7 @@
 		(aux_axis_origin 229 101)
 		(grid_origin 229 101)
 		(pcbplotparams
-			(layerselection 0x00302e0_ffffffff)
+			(layerselection 0x00302f0_ffffffff)
 			(plot_on_all_layers_selection 0x0001000_00000000)
 			(disableapertmacros no)
 			(usegerberextensions no)
@@ -120,11 +120,11 @@
 			(plotinvisibletext no)
 			(sketchpadsonfab no)
 			(subtractmaskfromsilk no)
-			(outputformat 4)
+			(outputformat 1)
 			(mirror no)
-			(drillshape 2)
+			(drillshape 0)
 			(scaleselection 1)
-			(outputdirectory "v1.0.0/pdf")
+			(outputdirectory "v1.0.0/gerber")
 		)
 	)
 	(net 0 "")
@@ -1203,7 +1203,7 @@
 		(descr "CP, Radial series, Radial, pin pitch=2.50mm, , diameter=7.5mm, Electrolytic Capacitor")
 		(tags "CP Radial series Radial pin pitch 2.50mm  diameter 7.5mm Electrolytic Capacitor")
 		(property "Reference" "C3"
-			(at 1.25 -5 -90)
+			(at 4.77 -3.99 -90)
 			(layer "F.SilkS")
 			(uuid "a0ad74ef-ccdf-47f9-990a-04d3490f8e6a")
 			(effects
@@ -8964,7 +8964,7 @@
 		(descr "Resistor, Axial_DIN0207 series, Axial, Horizontal, pin pitch=10.16mm, 0.25W = 1/4W, length*diameter=6.3*2.5mm^2, http://cdn-reichelt.de/documents/datenblatt/B400/1_4W%23YAG.pdf")
 		(tags "Resistor Axial_DIN0207 series Axial Horizontal pin pitch 10.16mm 0.25W = 1/4W length 6.3mm diameter 2.5mm")
 		(property "Reference" "R115"
-			(at 4.6 2.4 0)
+			(at 3.23 2.09 0)
 			(layer "F.SilkS")
 			(uuid "efbf6bb2-c967-4d2e-9e84-7e1c91aaa34b")
 			(effects
